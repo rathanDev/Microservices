@@ -14,9 +14,9 @@ public class CurrencyExchange {
     private long id;
 
     @Column(name = "from_currency")
-    private String from;
+    private String fromCurrency;
     @Column(name = "to_currency")
-    private String to;
+    private String toCurrency;
 
     private BigDecimal conversionMultiple;
     private String env;
@@ -24,10 +24,10 @@ public class CurrencyExchange {
     public CurrencyExchange() {
     }
 
-    public CurrencyExchange(long id, String from, String to, BigDecimal conversionMultiple) {
+    public CurrencyExchange(long id, String fromCurrency, String toCurrency, BigDecimal conversionMultiple) {
         this.id = id;
-        this.from = from;
-        this.to = to;
+        this.fromCurrency = fromCurrency;
+        this.toCurrency = toCurrency;
         this.conversionMultiple = conversionMultiple;
     }
 
@@ -39,20 +39,20 @@ public class CurrencyExchange {
         this.id = id;
     }
 
-    public String getFrom() {
-        return from;
+    public String getFromCurrency() {
+        return fromCurrency;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setFromCurrency(String fromCurrency) {
+        this.fromCurrency = fromCurrency;
     }
 
-    public String getTo() {
-        return to;
+    public String getToCurrency() {
+        return toCurrency;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setToCurrency(String toCurrency) {
+        this.toCurrency = toCurrency;
     }
 
     public BigDecimal getConversionMultiple() {
