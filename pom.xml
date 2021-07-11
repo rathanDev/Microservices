@@ -7,7 +7,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>limits-service/limits-service</module>
+        <module>limits-service</module>
+        <module>sc-config-server</module>
     </modules>
 
     <packaging>pom</packaging>
