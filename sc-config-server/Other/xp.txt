@@ -5,5 +5,8 @@
 Url to check config
 http://localhost:8888/limits-service/default
 
+http://localhost:8888/limits-service/dev
+http://localhost:8888/limits-service/qa
+
 Add JSON Formatter plugin in chrome to beautify
 
