@@ -1,0 +1,11 @@
+
+H2 Console
+http://localhost:8000/h2-console/login.jsp?jsessionid=96807e01728b3f5ba1461ffe7e5e193d
+
+insert into currency_exchange
+        (id,    from_currency, to_currency, conversion_multiple)
+values  (1001, 'USD', 'INR', 66.50);
+
+insert into currency_exchange
+        (id,    from_currency, to_currency, conversion_multiple)
+values  (1002, 'AUD', 'INR', 25.50);
