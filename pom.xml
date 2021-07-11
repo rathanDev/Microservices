@@ -9,6 +9,7 @@
     <modules>
         <module>limits-service</module>
         <module>sc-config-server</module>
+        <module>currency-exchange-service</module>
     </modules>
 
     <packaging>pom</packaging>
