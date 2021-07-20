@@ -24,6 +24,10 @@ public class CurrencyExchangeController {
 
         CurrencyExchange ce = currencyExchangeRepo.findByFromCurrencyAndToCurrency(fromCurrency, toCurrency);
 
+        if (ce == null) {
+            throw new RuntimeException("Unable to find data");
+        }
+
         String port = environment.getProperty("local.server.port");
         ce.setEnv(port);
 
