@@ -1,10 +1,14 @@
 package org.jana.currencyconversionservice;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class CurrencyConversionController {
@@ -13,7 +17,18 @@ public class CurrencyConversionController {
     public CurrencyConversion calculateCurrencyConversion(@PathVariable String from,
                                                           @PathVariable String to,
                                                           @PathVariable long quantity) {
-        return new CurrencyConversion(10001L, from, to, BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE, "dev");
+
+        // return new CurrencyConversion(10001L, from, to, BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE, "dev");
+
+        Map<String, String> uriVariableMap = new HashMap<>();
+        uriVariableMap.put("from", from);
+        uriVariableMap.put("to", to);
+        ResponseEntity<CurrencyConversion> responseEntity = new RestTemplate()
+                .getForEntity(
+                        "http://localhost:8001/currency-exchange/from/USD/to/INR",
+                        CurrencyConversion.class,
+                        uriVariableMap);
+        return responseEntity.getBody();
     }
 
 }
