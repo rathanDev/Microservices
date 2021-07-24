@@ -8,6 +8,7 @@ spring:
       discovery:
         locator:
           enabled: true
+          lowerCaseServiceId: true
 
 # Err-- org.springframework.cloud.commons.ConfigDataMissingEnvironmentPostProcessor$ImportException: No spring.config.import set
 #  spring.cloud.config.enabled=false
