@@ -1,9 +1,15 @@
 spring:
   application:
     name: api-gateway
+  cloud:
+    config:
+      enabled: false
+
+# Err-- org.springframework.cloud.commons.ConfigDataMissingEnvironmentPostProcessor$ImportException: No spring.config.import set
+#  spring.cloud.config.enabled=false
 
 server:
-  port: 9000
+  port: 8765
 
 eureka:
   client:
