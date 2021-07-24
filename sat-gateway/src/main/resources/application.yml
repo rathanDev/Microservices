@@ -4,6 +4,10 @@ spring:
   cloud:
     config:
       enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
 
 # Err-- org.springframework.cloud.commons.ConfigDataMissingEnvironmentPostProcessor$ImportException: No spring.config.import set
 #  spring.cloud.config.enabled=false
