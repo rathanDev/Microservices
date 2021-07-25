@@ -1,5 +1,6 @@
 package org.jana.currencyexchangeservice;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +14,8 @@ public class CircuitBreakerController {
 
     @GetMapping("/sample-api")
     // @Retry(name = "default") // thrice
-    @Retry(name = "sample-api", fallbackMethod = "getHardcodedResponse")
+    // @Retry(name = "sample-api", fallbackMethod = "getHardcodedResponse")
+    @CircuitBreaker(name = "default", fallbackMethod = "getHardcodedResponse")
     public String sampleApi() {
         logger.info("Sample api call received");
         return new RestTemplate()
