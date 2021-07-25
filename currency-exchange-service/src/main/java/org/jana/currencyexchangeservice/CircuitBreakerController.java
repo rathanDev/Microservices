@@ -18,9 +18,10 @@ public class CircuitBreakerController {
     @CircuitBreaker(name = "default", fallbackMethod = "getHardcodedResponse")
     public String sampleApi() {
         logger.info("Sample api call received");
-        return new RestTemplate()
-                .getForEntity("http://locahost:8080/some-dummy-url", String.class)
-                .getBody();
+        // return new RestTemplate()
+        //        .getForEntity("http://locahost:8080/some-dummy-url", String.class)
+        //        .getBody();
+        return "rate-limiter-response";
     }
 
     public String getHardcodedResponse(Exception e) {
