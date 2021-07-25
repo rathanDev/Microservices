@@ -5,6 +5,19 @@ Eureka    - 8761
 ApiGateway- 8765
 
 # ----- ----- # ----- ----- # ----- ----- # ----- ----- #
+Port already in use err
+
+PS C:\VProjects\Logs> netstat -ano | findstr 8100
+  TCP    0.0.0.0:8100           0.0.0.0:0              LISTENING       11100
+  TCP    [::]:8100              [::]:0                 LISTENING       11100
+PS C:\VProjects\Logs> taskkill /F /PID 11100
+SUCCESS: The process with PID 11100 has been terminated.
+PS C:\VProjects\Logs>
+
+# ----- ----- # ----- ----- # ----- ----- # ----- ----- #
+
+
+# ----- ----- # ----- ----- # ----- ----- # ----- ----- #
 
 Directly -
     Currency Exchange Service
