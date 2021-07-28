@@ -5,6 +5,20 @@ Eureka    - 8761
 ApiGateway- 8765
 
 # ----- ----- # ----- ----- # ----- ----- # ----- ----- #
+
+https://www.microsoft.com/en-sg/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab
+Ubuntu 20.04
+
+ubuntu
+username: jana
+password: aukio_902600
+
+sudo apt update 
+
+
+
+# ----- ----- # ----- ----- # ----- ----- # ----- ----- #
+
 Port already in use err
 
 PS C:\VProjects\Logs> netstat -ano | findstr 8100
