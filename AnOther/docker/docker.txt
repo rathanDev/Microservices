@@ -3,3 +3,48 @@ default IP  192.168.99.100
 
 check by docker-machine ip
 
+docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
+
+a public registry
+hub.docker.com
+
+https://hub.docker.com/u/in28min
+
+-- runs in foreground
+docker run -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+           -p hostPort:containerPort
+            bridge network
+
+-- runs in background as daemon
+docker run -p 5000:5000 -d in28min/todo-rest-api-h2:1.0.0.RELEASE
+returns an <id>
+
+docker logs <id>
+
+docker container ls
+
+-- to run another container
+docker run -p 5001:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+              hostPort:containerPort
+
+docker logs -f 38155a
+
+docker images
+
+docker container ls -a
+
+docker container stop 38155a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
