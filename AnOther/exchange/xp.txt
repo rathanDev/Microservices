@@ -1,5 +1,6 @@
 
 H2 Console
+http://localhost:8000/h2-console
 http://localhost:8000/h2-console/login.jsp?jsessionid=96807e01728b3f5ba1461ffe7e5e193d
 
 insert into currency_exchange
