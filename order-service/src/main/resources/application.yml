@@ -1,0 +1,22 @@
+server:
+  port: 8090
+
+# h2 db console available at
+# http://localhost:8090/h2-console
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb # H2 in-memory database URL
+    driverClassName: org.h2.Driver # H2 JDBC driver class name
+    username: sa # H2 default username
+    password: # H2 default password (blank)
+  jpa:
+    hibernate:
+      ddl-auto: create # Auto-create database tables on startup
+    show-sql: true # Show SQL statements in console
+  h2:
+    console:
+      enabled: true # Enable H2 console
+      path: /h2-console # H2 console URL path
+      settings:
+        web-allow-others: true # Allow access from other hosts

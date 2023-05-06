@@ -1,0 +1,30 @@
+
+Spring Cloud Eureka
+Spring Cloud Gateway
+Spring Cloud Hystrix
+
+
+ ---------- ---------- Eureka Service Registry ---------- ----------
+
+                  AUTH_SERVICE
+                    ^  |          /register
+                    |  |          /token
+       jwt          |  V          /validateToken
+      ----->      API_GATEWAY -----------------------------> service1 ------- DB1
+                              -----------------------------> service2 ------- DB2
+
+
+--------------------------------------------------------------------------------
+
+order-service
+
+Lombok
+Spring web
+Spring Data JPA
+H2 database
+
+
+
+--------------------------------------------------------------------------------
+
+

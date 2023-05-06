@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.jana</groupId>
-    <artifactId>microservices</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>jana</groupId>
+    <artifactId>micro_service</artifactId>
+    <version>0.0.0</version>
+    <packaging>pom</packaging>
+    <name>micro-service</name>
+    <description>Demo project for Microservice</description>
 
     <modules>
-        <module>limits-service</module>
-        <module>sc-config-server</module>
-        <module>currency-exchange-service</module>
+        <module>order-service</module>
+        <module>payment-service</module>
     </modules>
 
-    <packaging>pom</packaging>
 </project>
