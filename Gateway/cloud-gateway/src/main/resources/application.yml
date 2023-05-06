@@ -11,20 +11,14 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order/**
-#          filters:
-#            - name: CircuitBreaker
-#              args:
-#                name: order-service
-#                fallbackuri: forward:/fallback/order
         - id: payment-service
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payment/**
-#          filters:
-#            - name: CircuitBreaker
-#              args:
-#                name: payment-service
-#                fallbackuri: forward:/fallback/payment
+        - id: identity-service
+          uri: lb://SECURITY-SERVICE
+          predicates:
+            - Path=/auth/**
 
 eureka:
   client:
@@ -35,11 +29,4 @@ eureka:
   instance:
     hostname: localhost
 
-#hystrix:
-#  command:
-#    fallbackcmd:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 5000
 
