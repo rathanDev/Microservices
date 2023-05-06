@@ -22,4 +22,7 @@ public class Payment {
     private String status;
     private String transactionId;
 
+    private int orderId;
+    private int amount;
+
 }
