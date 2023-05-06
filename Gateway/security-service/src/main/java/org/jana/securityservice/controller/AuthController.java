@@ -1,5 +1,6 @@
 package org.jana.securityservice.controller;
 
+import org.jana.securityservice.entity.AuthRequest;
 import org.jana.securityservice.jpa.JpaUserCredential;
 import org.jana.securityservice.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,9 @@ public class AuthController {
         return authService.addUser(credential);
     }
 
-    @GetMapping("/token")
-    public String generateToken(JpaUserCredential credential) {
-        return authService.generateToken(credential.getName());
+    @PostMapping("/token")
+    public String generateToken(@RequestBody AuthRequest req) {
+        return authService.generateToken(req);
     }
 
     @GetMapping("/validate")
