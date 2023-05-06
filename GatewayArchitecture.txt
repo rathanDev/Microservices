@@ -1,4 +1,16 @@
 
+Ref:
+https://www.youtube.com/watch?v=tljuDMmfJz8&list=PLVz2XdJiJQxxWhFkucZBoMxeYE6qTgEF8&index=9&ab_channel=JavaTechie
+
+
+https://start.spring.io/
+    Maven
+    Java
+    SpringBoot: 2.7.11
+    Packaging: Jar
+    Java: 11
+
+
 Spring Cloud Eureka
 Spring Cloud Gateway
 Spring Cloud Hystrix
@@ -16,14 +28,15 @@ Spring Cloud Hystrix
 
 --------------------------------------------------------------------------------
 
-order-service
+order-service dependencies
+    Lombok
+    Spring web
+    Spring Data JPA
+    H2 database
+    eureka-client               - @EnableEurekaClient
 
-Lombok
-Spring web
-Spring Data JPA
-H2 database
-
-
+service-registry dependencies
+    eureka-server               - @EnableEurekaServer
 
 --------------------------------------------------------------------------------
 

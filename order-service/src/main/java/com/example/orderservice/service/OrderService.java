@@ -28,7 +28,7 @@ public class OrderService {
         paymentReq.setOrderId(order.getId());
         paymentReq.setAmount(order.getPrice());
 
-        Payment paymentResponse = restTemplate.postForObject("http://localhost:8095/payment", paymentReq, Payment.class);
+        Payment paymentResponse = restTemplate.postForObject("http://PAYMENT-SERVICE/payment", paymentReq, Payment.class);
 
         orderRepo.save(order);
 
