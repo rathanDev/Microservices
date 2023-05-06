@@ -2,3 +2,10 @@ Ref:
 https://www.youtube.com/watch?v=g4As3PLg6Ts&list=PLVz2XdJiJQxxWhFkucZBoMxeYE6qTgEF8&index=13&ab_channel=JavaTechie
 
 
+Security-service     dependencies
+    Spring security
+    Spring web
+    Lombok
+    Spring data
+    mysql driver
+    eureka client
