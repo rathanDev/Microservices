@@ -28,15 +28,20 @@ Spring Cloud Hystrix
 
 --------------------------------------------------------------------------------
 
-order-service dependencies
+order-service       dependencies
     Lombok
     Spring web
     Spring Data JPA
     H2 database
     eureka-client               - @EnableEurekaClient
 
-service-registry dependencies
+service-registry    dependencies
     eureka-server               - @EnableEurekaServer
+
+cloud-gateway       dependencies
+    cloud-gateway
+    eureka-client
+    actuator
 
 --------------------------------------------------------------------------------
 
