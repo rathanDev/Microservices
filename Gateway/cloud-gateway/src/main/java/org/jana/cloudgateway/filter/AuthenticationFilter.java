@@ -5,6 +5,7 @@ import org.jana.cloudgateway.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,6 +26,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     @Override
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) -> {
+            ServerHttpRequest httpReq = null;
             if (routeValidator.isSecured.test(exchange.getRequest())) {
                 // check if header contains token
                 if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
@@ -39,12 +41,18 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     // validate token
                     // String response = restTemplate.getForObject("http://SECURITY-SERVICE/auth/validate?token=" + authHeader, String.class);
                     jwtUtil.validateToken(authHeader);
+
+                    httpReq = exchange.getRequest()
+                            .mutate()
+                            .header("loggedInUser", jwtUtil.extractUsername(authHeader))
+                            .build();
+
                 } catch (Exception e) {
                     System.out.println("e = " + e);
                     throw new RuntimeException("Token invalid");
                 }
             }
-            return chain.filter(exchange);
+            return chain.filter(exchange.mutate().request(httpReq).build());
         });
     }
 

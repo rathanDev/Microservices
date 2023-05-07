@@ -1,0 +1,8 @@
+
+Some general spring security stuff
+
+    Filter
+        Use for authentication
+
+    Interceptor
+        Use for logging, caching, auditing

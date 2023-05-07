@@ -1,6 +1,6 @@
 Ref:
 https://www.youtube.com/watch?v=g4As3PLg6Ts&list=PLVz2XdJiJQxxWhFkucZBoMxeYE6qTgEF8&index=13&ab_channel=JavaTechie
-
+https://www.youtube.com/watch?v=qODoDq5_hAM&t=212s&ab_channel=JavaTechie
 
 Security-service     dependencies
     Spring security
@@ -9,3 +9,6 @@ Security-service     dependencies
     Spring data
     mysql driver
     eureka client
+
+TODO
+    spring boot jwt authorization roles
